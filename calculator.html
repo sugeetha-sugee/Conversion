@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        body{
+            background-color:lightgrey;
+            display: flex;
+            justify-content: center;
+            margin-top: 160px;
+        }
+        .container{
+            background-color: blue;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 50rem;
+            height: 20rem;
+            box-sizing: border-box;
+            border-radius: 10px;
+            border: 2px solid red;
+            align-items: center;
+
+        }
+        h1{
+            color: white;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            justify-content: center;
+            align-items: center;
+        }
+        #input{
+            width: 250px;
+            height: 25px;
+            padding: 2px;
+            border: 2px solid red;
+        }
+        #input2{
+            width: 250px;
+            height: 25px;
+            padding: 2px;
+            border: 2px solid red;
+        }
+        #result{
+            width: 150px;
+            height: 30px;
+            background-color: lightgreen;
+            margin-right: 20px;
+            box-shadow: 5px 5px 10px 0px rgba(0,0,0,1.0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+
+        }
+        #btn{
+            margin-right: 90px;
+            border-radius: 10px;
+            font-size: 18px;
+            margin-left: 12px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .a,.b{
+            color: white;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Body Mass Index</h1>
+        <div class="a">Mass Value    <input type="text" id="input"></div><br>
+        <div class="b">Height Value    <input type="text" id="input2"></div>
+         <br>
+            <button id="btn" onclick="calculator()">Click Here</button>
+         <br>
+        <div id="result"></div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+</html>

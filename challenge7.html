@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let mark = {
+  fullName: 'Mark Miller',
+  mass: 97, 
+  height: 1.89, 
+  calcBMI: function () {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
+  }
+};
+let john = {
+  fullName: 'John Smith',
+  mass: 82, 
+  height: 1.95, 
+  calcBMI: function () {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
+  }
+};
+mark.calcBMI();
+john.calcBMI();
+if (john.bmi > mark.bmi) {
+  console.log(`${john.fullName}'s BMI (${john.bmi.toFixed(2)}) is higher than ${mark.fullName}'s (${mark.bmi.toFixed(2)})!`);
+} else if (mark.bmi > john.bmi) {
+  console.log(`${mark.fullName}'s BMI (${mark.bmi.toFixed(2)}) is higher than ${john.fullName}'s (${john.bmi.toFixed(2)})!`);
+} else {
+  console.log(`${mark.fullName} and ${john.fullName} have the same BMI (${mark.bmi})!`);
+}
+
+    </script>
+</body>
+</html>

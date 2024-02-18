@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Poll App</title>
+</head>
+<body>
+
+<script>
+  const poll = {
+    question: "What is your favourite programming language?",
+    options: ["0: JavaScript", "1: Python", "2: Rust", "3: C++"],
+    answers: new Array(4).fill(0),
+
+    registerNewAnswer: function () {
+      const answer = prompt(
+        `${this.question}\n${this.options.join('\n')}\n(Write option number)`
+      );
+
+      const answerNumber = parseInt(answer);
+      if (!isNaN(answerNumber) && answerNumber >= 0 && answerNumber < this.answers.length) {
+        this.answers[answerNumber]++;
+        this.displayResults();
+      } else {
+        alert("Invalid input. Please enter a valid option number.");
+      }
+    },
+
+    displayResults: function (type = 'array') {
+      if (type === 'array') {
+        console.log(this.answers);
+      } else if (type === 'string') {
+        console.log(`Poll results are ${this.answers.join(', ')}`);
+      } else {
+        console.log("Invalid type. Please use 'array' or 'string'.");
+      }
+    }
+  };
+
+  // Bonus: Test data
+  const testData1 = [5, 2, 3];
+  const testData2 = [1, 5, 3, 9, 6, 1];
+
+  function displayTestDataResults() {
+    console.log("Display results for test data 1:");
+    poll.displayResults('array', testData1); // Output: [5, 2, 3]
+    console.log("Display results for test data 2:");
+    poll.displayResults('string', testData2); // Output: Poll results are 1, 5, 3, 9, 6, 1
+  }
+</script>
+
+<button onclick="poll.registerNewAnswer()">Answer poll</button>
+<button onclick="displayTestDataResults()">Display Test Data Results</button>
+
+</body>
+</html>
